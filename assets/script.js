@@ -44,16 +44,16 @@ function getData() {
 
                 var newRow = $("<div>").attr("class", "col bg-primary text-white");
                 $("#weeklyForecast").append(newRow);
-                var myDate = new Date(response.list[i * 5].dt * 1000);
+                var myDate = new Date(response.list[i * 8].dt * 1000);
                 newRow.append($("<h4>").html(myDate.toLocaleDateString()));
-                var iconCode = response.list[i * 5].weather[0].icon;
+                var iconCode = response.list[i * 8].weather[0].icon;
                 var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
                 newRow.append($("<img>").attr("src", iconURL));
                 var temp = Math.round((response.list[i * 8].main.temp - 273.15) * 1.80 + 32);
                 newRow.append($("<p>").html("Temp: " + temp + " &#8457"));
-                var humidity = response.list[i * 5].main.humidity;
+                var humidity = response.list[i * 8].main.humidity;
                 newRow.append($("<p>").html("Humidity:" + humidity));
-                var windSpeed = response.list[i * 5].main.windSpeed;
+                var windSpeed = response.list[i * 8].main.windSpeed;
                 newRow.append($("<p>").html("Wind Speed:" + windSpeed));
 
             }
@@ -73,7 +73,7 @@ function getItems() {
     };
 
     for (i = 0; i < searchHistory.length; i++) {
-        if (i == 5) {
+        if (i == 8) {
             break;
         }
 
