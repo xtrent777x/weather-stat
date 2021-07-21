@@ -7,59 +7,62 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Weather-Stat</title>
 </head>
 
 <body>
-    
+
 
     <div class="container-fluid">
 
-
-        <nav class="navbar">
-            <p class="header-style">Weather-Stat</p>
-        </nav>
+        <header>
+            <h1 class="header-style">Weather-Stat</h1>
+        </header>
 
 
         <div class="row">
 
             <!-- search field with click button and prior searches -->
             <div class="col-3 bg-light">
-                <div class="mt-2">Enter City</div>
-                <div class="input-group">
-                    <input type="text" id="city" class="form-control">
-                    <div class="input-group-append">
-                        <button class="btn" type="submit" id="searchCity">Submit</button>
-                    </div>
+                <div class="mt-2"><b>Enter City</b></div>
+                <input type="text" id="city" class="form-control">
+                <div class="input-group-append">
+                    <button class="btn" type="submit" id="searchCity">Submit</button>
                 </div>
-                
-                <div class="list-group">Prior Searches</div>
+
+                <div class="list-group"><b>Prior Search History</b></div>
             </div>
 
 
 
             <!-- Display current weather  -->
-            <div class="col-9">
-                <div class="row p-2">
+            <div class="col-3 mx-auto">
+                <div class="row">
                     <div class="card">
                         <div class="card-body"></div>
                     </div>
                 </div>
-                    <div class="row">
-                        <h3>Your next 5 days!</h3>
-                    </div>
-                    
-                <div id="weeklyForecast" class="row"></div>
+
             </div>
 
 
 
         </div>
-        
+
     </div>
 
+    <div>
+
+        <div class="col-12">
+            <h3> Your next 5 days!</h3>
+        </div>
+
+        <div id="weeklyForecast" class="col-12"></div>
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
