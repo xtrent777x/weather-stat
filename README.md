@@ -13,4 +13,8 @@ Past city searches can be re clicked to pull back up without having to research 
 as these will be saved to local storage.
 
 
+Get you weather
+
+https://xtrent777x.github.io/weather-stat/
+
 
