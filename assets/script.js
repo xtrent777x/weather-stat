@@ -7,8 +7,34 @@
 
 // CURRENT WEATHER LINK for API https://openweathermap.org/current
 
+var searchHistory = [];
+var city;
+var mainCard = $(".card-body");
+
 
 getItems();
+
+function getItems() {
+    var storedCities = JSON.parse(localStorage.getItem("searchHistory"));
+    if (storedCities !== null) {
+        searchHistory = storedCities;
+    };
+
+    for (i = 0; i < searchHistory.length; i++) {
+        if (i == 8) {
+            break;
+        }
+
+        cityListButton = $("<a>").attr({
+            class: "list-group-item list-group-item-action",
+
+            href: "#"
+        });
+
+        cityListButton.text(searchHistory[i]);
+        $(".list-group").append(cityListButton);
+    }
+};
 
 function getData() {
     var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=00f5a66c771c6fc77435970961446486"
@@ -61,32 +87,7 @@ function getData() {
     })
 };
 
-var searchHistory = [];
-var city;
-var mainCard = $(".card-body");
 
-
-function getItems() {
-    var storedCities = JSON.parse(localStorage.getItem("searchHistory"));
-    if (storedCities !== null) {
-        searchHistory = storedCities;
-    };
-
-    for (i = 0; i < searchHistory.length; i++) {
-        if (i == 8) {
-            break;
-        }
-
-        cityListButton = $("<a>").attr({
-            class: "list-group-item list-group-item-action",
-
-            href: "#"
-        });
-
-        cityListButton.text(searchHistory[i]);
-        $(".list-group").append(cityListButton);
-    }
-};
 
 $("#searchCity").click(function () {
     city = $("#city").val();
